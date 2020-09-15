@@ -1,11 +1,11 @@
-package pratice.week1.first;
+package pratice.week1.five;
 
 import model.ListNode;
 
 /**
  * @author yd
  * @version 1.0
- * @date 2020-09-08 22:59
+ * @date 2020-09-15 15:13
  */
 public class HasCycle {
 
@@ -14,15 +14,15 @@ public class HasCycle {
             return false;
         }
 
-        ListNode low = head;
         ListNode fast = head.next;
+        ListNode slow = head;
 
         while (fast != null && fast.next != null){
-            if(low == fast){
+            if(fast == slow){
                 return true;
             }
-            low = low.next;
             fast = fast.next.next;
+            slow = slow.next;
         }
         return false;
     }

@@ -1,9 +1,9 @@
-package pratice.week1.first;
+package pratice.week1.five;
 
 /**
  * @author yd
  * @version 1.0
- * @date 2020-09-08 22:16
+ * @date 2020-09-15 15:06
  */
 public class ClimbStairs {
 
