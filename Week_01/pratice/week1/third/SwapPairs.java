@@ -1,24 +1,21 @@
 package pratice.week1.third;
 
+import model.ListNode;
+
 /**
  * @author yd
  * @version 1.0
- * @date 2020-09-10 15:22
+ * @date 2020-09-16 15:54
  */
 public class SwapPairs {
 
-    public int climbStairs(int n) {
-        if(n <= 2){
-            return n;
+    public ListNode swapPairs(ListNode head) {
+        if(head == null || head.next == null){
+            return head;
         }
-
-        int f1 = 1, f2 = 2, f3 = 3;
-
-        for (int i = 3; i < n; i++){
-            f1 = f2;
-            f2 = f3;
-            f3 = f1 + f2;
-        }
-        return f3;
+        ListNode next = head.next;
+        head.next = swapPairs(next.next);
+        next.next = head;
+        return next;
     }
 }
